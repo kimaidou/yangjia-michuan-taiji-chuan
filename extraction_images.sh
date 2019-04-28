@@ -5,6 +5,8 @@ ffmpeg -i video.mp4 -vf "crop=400:300:120:30" 1.mp4
 
 # extraire
 ffmpeg -i "1.mp4" -vf fps=1/2 extraction/out%04d.jpg
+# parfois, on précise plutôt le nombre d'images par secondes, ex
+ffmpeg -i ../../../source/baton/Yang_Style_Tai_Chi_Pole/Yang_Style_Tai_Chi_Pole.mp4 -vf fps=5 extraction/out%04d.jpg
 
 # html
 ls extraction/*.jpg | sed 's#extraction#<img style="width:170px" src="extraction#g' | sed 's#jpg#jpg">#g' > index.html
